@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Checkout code"){
             steps{
-                git branch:'main', url: 'https://github.com/madhuk54/PythonProject.git'
+                git branch:'main', url: 'https://github.com/madhuk54/Python.git'
             }
         }
         stage("Install dependencies"){
