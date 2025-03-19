@@ -6,24 +6,24 @@ pipeline{
                 git branch:'main', url: 'https://github.com/madhuk54/Python.git'
             }
         }
-        // stage("Install dependencies"){
-        //     steps{
-        //         bat '''
-        //             python -m venv venv
-        //             call venv\\Scripts\\activate
-        //             python -m pip install --upgrade pip
-        //             pip install -r requirement.txt
-        //             '''
-        //     }
-        // }
-        stage("Run tests"){
+        stage("Install dependencies"){
             steps{
                 bat '''
+                    python -m venv venv
                     call venv\\Scripts\\activate
-                    pytest test.py --maxfail=1 --disable-warnings
+                    python -m pip install --upgrade pip
+                    pip install -r requirement.txt
                     '''
             }
         }
+        // stage("Run tests"){
+        //     steps{
+        //         bat '''
+        //             call venv\\Scripts\\activate
+        //             pytest test.py --maxfail=1 --disable-warnings
+        //             '''
+        //     }
+        // }
         stage("Deploy"){
             steps{
                 echo "Deploying application"
