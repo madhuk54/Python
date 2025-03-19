@@ -1,5 +1,6 @@
-from add import add_number
+from add import add_numbers  
 
 def test_check():
-    assert add_number(10, 20) == 30
+    assert add_numbers() == 30  
+
 
