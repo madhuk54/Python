@@ -16,14 +16,14 @@ pipeline{
                     '''
             }
         }
-        // stage("Run tests"){
-        //     steps{
-        //         bat '''
-        //             call venv\\Scripts\\activate
-        //             pytest test.py --maxfail=1 --disable-warnings
-        //             '''
-        //     }
-        // }
+        stage("Run tests"){
+            steps{
+                bat '''
+                    call venv\\Scripts\\activate
+                    pytest test.py --maxfail=1 --disable-warnings
+                    '''
+            }
+        }
         stage("Deploy"){
             steps{
                 echo "Deploying application"
